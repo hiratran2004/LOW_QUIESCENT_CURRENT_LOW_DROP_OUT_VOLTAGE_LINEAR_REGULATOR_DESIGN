@@ -107,10 +107,10 @@ Together, these two subsystems ensure that the BGR not only meets the low-power 
 
 #### Proposed Bandgap Topology
 
-![Proposed Bandgap Reference Topology](bgr/bgr_proposed.png)  
+![Proposed Bandgap Reference Topology](figure/bgr_proposed.png)  
 *Figure: Proposed Bandgap Reference Topology*
 
-![General Schematic of BGR](bgr/GBGR_SCHE.png)  
+![General Schematic of BGR](figure/GBGR_SCHE.png)  
 *Figure: General Schematic of BGR*
 
 
@@ -138,31 +138,16 @@ In this work, all operational amplifiers are implemented using the folded-cascod
 Two-stage OA topologies can provide larger output swing but introduce two dominant poles, which can complicate frequency compensation and reduce phase margin.  
 By contrast, the folded-cascode configuration naturally yields a single dominant pole, simplifying stability design and enhancing robustness across PVT corners.
 
-![General schematic of EA in BGR](bgr/GEA_SCHE.png)  
+![General schematic of EA in BGR](figure/GEA_SCHE.png)  
 *Figure: General Schematic of EA in BGR*
 
-![Detail schematic of Error amplifier core and self bias circuit](bgr/EA_CORE.png)  
+![Detail schematic of Error amplifier core and self bias circuit](figure/EA_CORE.png)  
 *Figure: Detail schematic of EA core and self-bias circuit*
 
-#### Table 5 – Transistor Sizing of EA in BGR
-
-| Device Name    | W/L       | Finger | Multiplier | Segment |
-|----------------|-----------|--------|------------|---------|
-| PM VIN         | 1 µ / 200 nm | 1      | 1          | 1       |
-| PM VP1         | 1 µ / 20 µ  | 4      | 1          | 1       |
-| PM VP2         | 500 nm / 18 µ | 4    | 2          | 1       |
-| NM VN1         | 500 nm / 20 µ | 2    | 2          | 1       |
-| NM VN2         | 500 nm / 20 µ | 2    | 1          | 1       |
-| PM TAIL        | 500 nm / 10 µ | 2    | 4          | 1       |
-| PM TAIL BIAS   | 500 nm / 10 µ | 2    | 2          | 1       |
-| PM IREF COPY   | 500 nm / 10 µ | 2    | 1          | 1       |
-| NM IREF        | 250 nm / 20 µ | 2    | 1          | 1       |
-| NM SELF BIAS   | 220 nm / 20 µ | 1    | 1          | 50      |
-
-![Open-loop Gain of EA in BGR](bgr/EA_GAIN.png)  
+![Open-loop Gain of EA in BGR](figure/EA_GAIN.png)  
 *Figure: Open-loop Gain of EA in BGR*
 
-![PSRR of EA in BGR](bgr/EA_PSRR.png)  
+![PSRR of EA in BGR](figure/EA_PSRR.png)  
 *Figure: PSRR of EA in BGR*
 
 From post-measurement results, the voltage difference \(\Delta V_{BE}\) was found to be approximately \(550 \, \text{mV}\), which directly sets the common-mode input voltage of the EA.  
@@ -218,30 +203,16 @@ $$
 
 Structurally, the gain-boosting amplifier is similar to the EA, but uses an NMOS differential input pair due to a higher required common-mode input voltage (~0.9 V).
 
-![Schematic of Gain boosting amplifier](bgr/GB_AMP_SCHE.png)  
+![Schematic of Gain boosting amplifier](figure/GB_AMP_SCHE.png)  
 *Figure: Gain-boosting Amplifier Schematic*
 
-![Detail schematic of Gain boosting amplifier](bgr/GBA_CORE.png)  
+![Detail schematic of Gain boosting amplifier](figure/GBA_CORE.png)  
 *Figure: Gain-boosting Amplifier Core*
 
-#### Table 7 – Transistor Sizing of Gain-Boosting Amplifier
-
-| Device Name    | W/L         | Finger | Multiplier | Segment |
-|----------------|-------------|--------|------------|---------|
-| NM VIN         | 1.5 µ / 300 nm | 1    | 1          | 1       |
-| PM VP1         | 2 µ / 20 µ  | 2      | 2          | 1       |
-| PM VP2         | 500 nm / 10 µ | 2    | 2          | 1       |
-| NM VN1         | 500 nm / 20 µ | 2    | 1          | 1       |
-| NM VN2         | 500 nm / 20 µ | 2    | 1          | 1       |
-| NM TAIL        | 500 nm / 10 µ | 2    | 1          | 1       |
-| PM IREF COPY   | 500 nm / 6 µ  | 2    | 2          | 1       |
-| PM IREF        | 500 nm / 6 µ  | 2    | 1          | 1       |
-| PM SELF BIAS   | 220 nm / 20 µ | 1    | 1          | 16      |
-
-![Open-loop Gain of Gain boosting amplifier](bgr/GB_AMP_GAIN.png)  
+![Open-loop Gain of Gain boosting amplifier](figure/GB_AMP_GAIN.png)  
 *Figure: Open-loop Gain of Gain-Boosting Amplifier*
 
-![PSRR of Gain boosting amplifier](bgr/GB_AMP_PSR.png)  
+![PSRR of Gain boosting amplifier](figure/GB_AMP_PSR.png)  
 *Figure: PSRR of Gain-Boosting Amplifier*
 
 #### Table 8 – Gain-Boosting Amplifier: Measured Parameters
@@ -269,7 +240,7 @@ $$
 | R      | 321.45 kΩ           | 1          | 50      | 16.0725 MΩ       |
 | C      | 951.6 fF            | 100        | 1       | 9.516 pF         |
 
-![Low Pass Filter Schematic](bgr/LPF_SCHE.png)  
+![Low Pass Filter Schematic](figure/LPF_SCHE.png)  
 *Figure: Low-Pass Filter Schematic*
 
 
@@ -283,7 +254,7 @@ The BGR has two operating regions:
 Without a start-up circuit, the BGR can remain stuck in the no-power region due to a metastable equilibrium at zero current.  
 A dedicated start-up circuit forces the BGR into the active region at power-up and then becomes inactive in steady state to avoid affecting accuracy.
 
-![Start-up Circuit](bgr/START_UP.png)  
+![Start-up Circuit](figure/START_UP.png)  
 *Figure: Start-up Circuit Schematic*
 
 At initial power-up:
@@ -295,16 +266,16 @@ At initial power-up:
 As \(V_{\text{BGR}}\) increases, M7 turns on, gate of M6 falls from \(V_{DD}\), and M6 current approaches zero.  
 \(R_{21}\) is chosen large to limit unnecessary current during normal operation.
 
-![VBGR vs VDD](bgr/VBGR_VDD.png)  
+![VBGR vs VDD](figure/VBGR_VDD.png)  
 *Figure: \(V_{\text{BGR}}\) – \(V_{DD}\) Graph*
 
-![VBGR Transient](bgr/VBGR_TRANS.png)  
+![VBGR Transient](figure/VBGR_TRANS.png)  
 *Figure: Transient Simulation at Power-Up*
 
 The PMOS current mirror in the BGR uses two-finger devices with \(W/L = 500 \, \text{nm} / 20 \, \mu\text{m}\) to improve matching and PSRR.  
 PMOS device \(M_{13}\) supplies the bias current for the LDO error amplifier.
 
-![Current mirror of BGR circuit](bgr/CS_BGR.png)  
+![Current mirror of BGR circuit](figure/CS_BGR.png)  
 *Figure: Current Mirror of BGR Circuit*
 
 
@@ -341,10 +312,10 @@ $$
 \Delta V_{\text{ref}} = 13.23 \, \text{mV} \cdot \frac{2}{3} = 8.82 \, \text{mV}
 $$
 
-![Trimming circuit schematic](bgr/TRIM.png)  
+![Trimming circuit schematic](figure/TRIM.png)  
 *Figure: Trimming Circuit*
 
-![Post trimming simulation](bgr/POST_TRIM_VBGR.png)  
+![Post trimming simulation](figure/POST_TRIM_VBGR.png)  
 *Figure: Post-Trimming Simulation*
 
 
@@ -365,7 +336,7 @@ $$
 I_{\text{Ref}} = I_{\text{PTAT}} + I_{\text{CTAT}} - 2 I_{\text{non-linear}}
 $$
 
-![Bandgap reference core and curvature compensation branch](bgr/BGR_CORE.png)  
+![Bandgap reference core and curvature compensation branch](figure/BGR_CORE.png)  
 *Figure: BGR Core and Curvature Compensation Branch*
 
 
@@ -373,14 +344,14 @@ $$
 
 The PTAT–CTAT compensation point is designed at the nominal operating temperature to minimize variation under typical conditions.
 
-![Loop Gain of EA in BGR](bgr/EA_LOOP_GAIN.png)  
-![Phase of EA in BGR](bgr/EA_PHASE.png)  
+![Loop Gain of EA in BGR](figure/EA_LOOP_GAIN.png)  
+![Phase of EA in BGR](figure/EA_PHASE.png)  
 
-![Loop Gain of Gain-boosting amplifier in BGR](bgr/GB_AMP_LOOP_GAIN.png)  
-![Phase of Gain-boosting amplifier in BGR](bgr/GB_AMP_PHASE.png)  
+![Loop Gain of Gain-boosting amplifier in BGR](figure/GB_AMP_LOOP_GAIN.png)  
+![Phase of Gain-boosting amplifier in BGR](figure/GB_AMP_PHASE.png)  
 
-![PTAT, CTAT and temperature compensation point](bgr/PTAT_CTAT.png)  
-![Change of Reference voltage and temperature](bgr/VBGR.png)  
+![PTAT, CTAT and temperature compensation point](figure/PTAT_CTAT.png)  
+![Change of Reference voltage and temperature](figure/VBGR.png)  
 
 #### Table 10 – BGR PVT Results
 
@@ -447,16 +418,16 @@ For an **NMOS-based LDO**:
 
 Because NMOS devices have larger \(\beta\), the NMOS-based \(P_2\) is at a much higher frequency, especially in capacitor-less designs (small \(C_L\)), allowing \(P_1\) to be the dominant pole.
 
-![NMOS vs PMOS pass device drive capability](bgr/CPNP.png)  
+![NMOS vs PMOS pass device drive capability](figure/CPNP.png)  
 *Figure: Comparison of Load Drive Capability of (a) NMOS and (b) PMOS Pass Devices*
 
 According to the comparison in Table 12, NMOS and PMOS are the most suitable pass devices for low quiescent current with high load current.  
 PMOS has lower dropout voltage, so it is selected in this work.
 
-![LDO block diagram](bgr/LDO_BLOCK_DIA.png)  
+![LDO block diagram](figure/LDO_BLOCK_DIA.png)  
 *Figure: LDO Block Diagram*
 
-![Five kinds of popular Pass Devices](bgr/PASSDV.png)  
+![Five kinds of popular Pass Devices](figure/PASSDV.png)  
 *Figure: Common Pass Device Types*
 
 #### Table 12 – Pass Device Comparison
@@ -468,7 +439,7 @@ PMOS has lower dropout voltage, so it is selected in this work.
 | \(V_{\text{drop-out}}\) | \(V_{\text{sat}} + V_{\text{gs}}\) | \(V_{\text{sat}} + V_{\text{be}}\) | \(V_{\text{ec-sat}}\) | \(V_{\text{sd-sat}}\) | \(V_{\text{sat}} + 2V_{\text{be}}\) |
 | Speed              | Medium        | Fast           | Slow           | Medium         | Fast              |
 
-![LDO schematic](bgr/LDO_SCHE.png)  
+![LDO schematic](figure/LDO_SCHE.png)  
 *Figure: LDO Schematic*
 
 
@@ -477,24 +448,10 @@ PMOS has lower dropout voltage, so it is selected in this work.
 The EA regulates the output by ensuring the feedback voltage equals the reference (0.9 V).  
 For better PSRR with a PMOS pass device, an NMOS differential input pair is used in the EA.
 
-![General schematic of LDO EA](bgr/EA_SCHE_LDO.png)  
-![Detail schematic of LDO EA core](bgr/EA_LDO_CORE.png)  
+![General schematic of LDO EA](figure/EA_SCHE_LDO.png)  
+![Detail schematic of LDO EA core](figure/EA_LDO_CORE.png)  
 
-![Open-loop Gain of EA in LDO](bgr/EA_LDO_GAIN.png)  
-
-#### Table 13 – Transistor Sizing of LDO EA
-
-| Device Name    | W/L         | Finger | Multiplier | Segment |
-|----------------|-------------|--------|------------|---------|
-| NM VIN         | 300 nm / 600 nm | 1   | 1          | 1       |
-| PM VP1         | 2 µ / 20 µ      | 2   | 20         | 1       |
-| PM VP2         | 500 nm / 10 µ   | 2   | 10         | 1       |
-| NM VN          | 500 nm / 20 µ   | 2   | 10         | 1       |
-| NM VN BIAS     | 500 nm / 20 µ   | 2   | 2          | 1       |
-| NM TAIL        | 500 nm / 20 µ   | 2   | 14         | 1       |
-| NM TAIL BIAS   | 500 nm / 20 µ   | 2   | 1          | 1       |
-| PM IREF COPY   | 500 nm / 15 µ   | 2   | 2          | 1       |
-| PM IREF        | 500 nm / 15 µ   | 2   | 1          | 1       |
+![Open-loop Gain of EA in LDO](figure/EA_LDO_GAIN.png)  
 
 To enhance phase margin, **Miller compensation** is used:
 
@@ -503,9 +460,9 @@ To enhance phase margin, **Miller compensation** is used:
 - Splits poles (dominant pole at low frequency, non-dominant poles at higher frequencies)  
 - Improves stability and transient response across PVT and load conditions
 
-![Miller frequency compensation technique in LDO](bgr/MILLER.png)  
+![Miller frequency compensation technique in LDO](figure/MILLER.png)  
 
-![PSRR of EA in LDO](bgr/EA_LDO_PSRR.png)  
+![PSRR of EA in LDO](figure/EA_LDO_PSRR.png)  
 
 #### Table 14 – LDO EA: Measured Parameters
 
@@ -518,14 +475,14 @@ To enhance phase margin, **Miller compensation** is used:
 
 ### Comparison and Summary of LDO
 
-![Loop Gain of LDO](bgr/LDO_LOOP_GAIN.png)  
-![Phase of LDO](bgr/LDO_PHASE.png)  
+![Loop Gain of LDO](figure/LDO_LOOP_GAIN.png)  
+![Phase of LDO](figure/LDO_PHASE.png)  
 
 The LDO is stable when the phase margin satisfies \( \text{PM} > 45^\circ \), as confirmed by loop-gain and phase simulations.
 
-![PSRR of LDO](bgr/LDO_PSRR.png)  
+![PSRR of LDO](figure/LDO_PSRR.png)  
 
-![Line Regulation of LDO](bgr/LINE_REG.png)  
+![Line Regulation of LDO](figure/LINE_REG.png)  
 
 Line regulation:
 
@@ -536,9 +493,9 @@ $$
 = 0.09\%
 $$
 
-![Load Regulation of LDO](bgr/LDO_LOAD_REG.png)  
-![Transient Load Regulation of LDO](bgr/TRAN_LOAD_REG.png)  
-![Transient Vout of LDO](bgr/LDO_TRAN.png)  
+![Load Regulation of LDO](figure/LDO_LOAD_REG.png)  
+![Transient Load Regulation of LDO](figure/TRAN_LOAD_REG.png)  
+![Transient Vout of LDO](figure/LDO_TRAN.png)  
 
 Due to the sufficiently high phase margin, the system shows excellent transient stability with no observable overshoot or undershoot.  
 The LDO reference system satisfies design requirements and aligns with practical industry norms, providing a solid basis for future silicon implementation.
@@ -566,7 +523,7 @@ to enhance applicability in integrated-circuit design.
 
 | Parameter           | This Work | [11] 2024 | [12] 2025 | [13] 2024 | [14] 2024 | [15] 2024 | Unit |
 |---------------------|-----------|-----------|-----------|-----------|-----------|-----------|------|
-| Process             | \multicolumn{7}{c|}{180 nm}                         |
+| Process             | 180nm                       |
 | Vin                 | 1.8       | 1.4–1.8   | 2.3–20    | 1.55      | –         | 0.55–1.8  | V    |
 | Load Range          | 1 µ–10 m  | 350 m     | 500 m     | 20 m      | 100 m     | 0.95 m    | A    |
 | Vout                | 1.191     | 1.2–1.6   | 0.1–19.7  | 1.5       | –         | 0.5–0.8   | V    |
