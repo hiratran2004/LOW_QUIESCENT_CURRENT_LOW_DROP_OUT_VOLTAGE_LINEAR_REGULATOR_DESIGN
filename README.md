@@ -9,7 +9,7 @@ Department of Electrical Engineering
 
 ![Logo](figure/NCCU.jpg)
 
-**Technology/Process:** TSMC 180nm
+**Technology/Process:** 180nm
 
 Project Duration: 15th July, 2025 to 20th August, 2025
 
