@@ -1,4 +1,4 @@
-#  LOW QUIESCENT CURRENT LOW DROP OUT VOLTAGE LINEAR REGULATOR (DESIGN, LAYOUT AND TAPE OUT)
+#  LOW QUIESCENT CURRENT LOW DROP OUT VOLTAGE LINEAR REGULATOR
 
 **Authors:** Trong Hieu Tran (Hira) 
 
@@ -11,4 +11,7 @@ Department of Electrical Engineering
 
 **Technology/Process:** TSMC 180nm
 
-**Date (last upadated):** 16th August, 2025
+Project Duration: 15th July, 2025 to 20th August, 2025
+
+**Date (lastest upadated):** 16th August, 2025
+
