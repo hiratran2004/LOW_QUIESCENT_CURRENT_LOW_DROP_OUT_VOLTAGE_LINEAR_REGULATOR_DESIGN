@@ -540,3 +540,36 @@ Results show that:
 - Operation is robust across TT, FF, SS, SF, and FS process corners  
 
 A summary table of key performance metrics highlights that the proposed design is competitive relative to prior work and provides a strong foundation for further CMOS LDO implementations.
+
+## References
+
+1. **Behzad Razavi**, *Design of Analog CMOS Integrated Circuits*, McGraw-Hill Education.
+
+2. **R. Jacob Baker**, *CMOS Circuit Design, Layout and Simulation*, IEEE Press.
+
+3. **Behzad Razavi**, *The Design of a Low-Voltage Bandgap Reference*, IEEE Solid-State Circuits Magazine, Summer 2021.
+
+4. **Behzad Razavi**, *The Design of an LDO Regulator*, IEEE Solid-State Circuits Magazine, Spring 2022.
+
+5. **Amr I. Kamel; Ahmed Saad; Lee Seng Siong**, *A High Wide-Band PSRR and Fast Start-Up Current-Mode Bandgap Reference in 130 nm CMOS Technology*, 2016 IEEE International Symposium on Circuits and Systems (ISCAS).
+
+6. **Lukas Šalavėjus; Vaidotas Barzdėnas; Aleksandr Vasjanov; Tzung-Je Lee**, *Sub-1 V Bandgap Reference Design Using TSMC 180 nm BCD Process*, IEEE.
+
+7. **Joel Georgeous; Lutfi Albasha**, *Design and Implementation of a Bandgap Voltage Reference (1.8 V) and a Low Drop-Out Circuit Using 180 nm BiCMOS Technology*, IEEE.
+
+8. **Emmanuel Amankrah; Patricia Tutuani; Randall Geiger**, *A Hybrid BJT/Subthreshold MOSFET-Based Voltage Reference with a Sub-1 ppm/°C Temperature Coefficient*, IEEE.
+
+9. **Xuanlin Chen; Jiangchao Wu; Bo Wang; Man Kay Law**, *A 0.9 V CMOS Voltage Reference with 0.41% Untrimmed Accuracy and 44.7 ppm/°C TC from −35 °C to 130 °C*, IEEE.
+
+10. **Peng Fu; Xin Pan; Tiedong Cheng; Ziyu Xiao**, *A 0.638 ppm/°C Precision Bandgap Reference with Multi-Segment Current Compensation*, IEEE.
+
+11. **Sayantan Samanta; Joydeep De; Srijit Mishra; Soumik Bandyopadhyay; Swarnil Roy**, *A Transient Enhanced Capacitor-Less 380 mA LDO with 1.2 µA Quiescent Current*, IEEE.
+
+12. **Yun Li; Jiarun Jiang; Pengda Qu; Yue Zhao; Feng Luo; Zhiming Xiao**, *An Ultra-Low Noise and Wide Output Range LDO with BJT Input Stage and Base Current Cancellation Technique*, IEEE.
+
+13. **Michael Sekyere; Degang Chen**, *Low Power, Fully-Integrated Flipped Voltage Follower LDO Using Off-State Non-Linear Circuits for Enhanced Transient Performance (Invited Paper)*, IEEE.
+
+14. **Fanyang Li; Tao Yin; Faxiang Wang; Zhanpeng Yuan**, *A Transient Response Improved Digital LDO with an Approximate CEAG Analog-to-Frequency Domain Converter*, IEEE.
+
+15. **Marco Privitera; Andrea Ballo; Alfio Dario Grasso; Massimo Alioto**, *A 15-nA Quiescent Current Capacitor-Less LDO for Sub-1 V µW-Powered Fully-Harvested Systems*, IEEE.
+
