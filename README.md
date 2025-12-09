@@ -371,7 +371,7 @@ The PTAT–CTAT compensation point is designed at the nominal operating temperat
 
 | Parameter           | This Work | [6] 2025 | [7] 2025 | [8] 2025 | [9] 2025 | [10] 2025 | Unit  |
 |---------------------|-----------|----------|----------|----------|----------|-----------|-------|
-| Process             | \multicolumn{7}{c|}{180 nm}                            |
+| Process             | 180nm                                                                     |
 | Supply              | 1.8       | 1.65–5.5 | 1.8      | 1.5–1.8  | 0.9      | 1.5–2.5   | V     |
 | VBG                 | 0.8928    | 0.807    | 1.8      | 0.58     | 0.524    | 0.9       | V     |
 | Temp Co.            | 45.5      | 65       | 13.54    | 0.86     | 44.7     | 0.638     | ppm   |
@@ -394,29 +394,21 @@ For a **PMOS-based LDO**:
 
 - Pole $P_1$ at the gate of the pass device:
 
-  $$
-  f_{P1} = -\frac{1}{2\pi R_{\text{OTA}} C_{\text{gate}}}
-  $$
+  $f_{P1} = -\frac{1}{2\pi R_{\text{OTA}} C_{\text{gate}}}$
 
 - Pole $P_2$ at the output:
 
-  $$
-  f_{P2} = -\frac{1}{2\pi R_L C_L} = -\frac{I_{\text{load}}}{2\pi V_{\text{out}} C_L}
-  $$
+  $f_{P2} = -\frac{1}{2\pi R_L C_L} = -\frac{I_{\text{load}}}{2\pi V_{\text{out}} C_L}$
 
 For an **NMOS-based LDO**:
 
 - Pole $P_1$ (EA output):
 
-  $$
-  f_{P1} = -\frac{1}{2\pi R_{\text{OTA}} C_{\text{gate}}}
-  $$
+  $  f_{P1} = -\frac{1}{2\pi R_{\text{OTA}} C_{\text{gate}}}$
 
 - Pole $P_2$ at regulator output:
 
-  $$
-  f_{P2} = -\frac{g_{m,\text{NMOS}}}{2\pi C_L} = -\frac{\sqrt{2 \beta I_{\text{load}}}}{2\pi C_L}
-  $$
+  $f_{P2} = -\frac{g_{m,\text{NMOS}}}{2\pi C_L} = -\frac{\sqrt{2 \beta I_{\text{load}}}}{2\pi C_L}$
 
 Because NMOS devices have larger $\beta$, the NMOS-based $P_2$ is at a much higher frequency, especially in capacitor-less designs (small $C_L$), allowing $P_1$ to be the dominant pole.
 
