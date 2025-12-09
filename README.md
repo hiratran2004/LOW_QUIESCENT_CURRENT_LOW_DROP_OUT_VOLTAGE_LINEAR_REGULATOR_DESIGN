@@ -11,6 +11,8 @@ Department of Electrical Engineering
 
 **Technology/Process:** 180nm
 
+**Tool:** Cadence Virtuoso
+
 Project Duration: 15th July, 2025 to 20th August, 2025
 
 **Date (lastest upadated):** 16th August, 2025
