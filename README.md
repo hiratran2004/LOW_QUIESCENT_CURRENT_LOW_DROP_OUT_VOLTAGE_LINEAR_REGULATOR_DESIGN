@@ -71,8 +71,8 @@ such as gain boosting and supply noise filtering, to meet the stringent performa
 
 ### Specification
 
-The bandgap (BGR) block is one of the most critical components of the LDO, as it generates a reference voltage \(V_{\text{ref}}\) that is insensitive to temperature and process variations for the subsequent error amplifier (EA).  
-In addition, the BGR in this thesis is designed to provide a precise reference current \(I_{\text{ref}}\), enabling accurate biasing and consistent performance across process, voltage, and temperature (PVT) corners.
+The bandgap (BGR) block is one of the most critical components of the LDO, as it generates a reference voltage $V_{\text{ref}}$ that is insensitive to temperature and process variations for the subsequent error amplifier (EA).  
+In addition, the BGR in this thesis is designed to provide a precise reference current $I_{\text{ref}}$, enabling accurate biasing and consistent performance across process, voltage, and temperature (PVT) corners.
 
 ### Table 3 – Bandgap Reference Specification
 
@@ -95,7 +95,7 @@ To accomplish this goal, the circuit design strategically utilizes resistors wit
 By increasing the resistance per unit area, the static current drawn through these elements is significantly reduced, thereby lowering the total standby power consumption of the bandgap reference (BGR) circuit.
 
 However, the adoption of high-resistance components introduces a notable design trade-off.  
-Specifically, the value of resistor \(R_7\) becomes more sensitive to variations in the semiconductor manufacturing process, as well as to temperature-induced fluctuations in resistivity.  
+Specifically, the value of resistor $R_7$ becomes more sensitive to variations in the semiconductor manufacturing process, as well as to temperature-induced fluctuations in resistivity.  
 These variations can lead to substantial deviations in the output reference voltage across different process corners and over the operating temperature range.  
 Such deviations, if left uncompensated, would undermine the accuracy and stability of the reference voltage, potentially impacting the performance of the entire system that relies on this BGR.
 
@@ -152,7 +152,7 @@ By contrast, the folded-cascode configuration naturally yields a single dominant
 ![PSRR of EA in BGR](figure/EA_PSRR.png)  
 *Figure: PSRR of EA in BGR*
 
-From post-measurement results, the voltage difference \(\Delta V_{BE}\) was found to be approximately \(550 \, \text{mV}\), which directly sets the common-mode input voltage of the EA.  
+From post-measurement results, the voltage difference $\Delta V_{BE}$ was found to be approximately $550 \, \text{mV}$, which directly sets the common-mode input voltage of the EA.  
 Due to this relatively low common-mode level, a PMOS input differential pair is selected to provide adequate headroom and maintain high gain.
 
 #### Table 6 – EA in BGR: Measured Parameters
@@ -185,7 +185,7 @@ $$
 V_{\text{out}} = \frac{-PSRR_{A1} \cdot V_{DD}}{g_{m_{M7}} \cdot R_{\text{out}}} + \frac{V_{DD}}{g_{m_{M7}} \cdot R_7}
 $$
 
-If \(r_{ds_{M7}} \gg R_7\):
+If $r_{ds_{M7}} \gg R_7$:
 
 $$
 V_{\text{out}} \approx \frac{V_{DD} \cdot (1 - PSRR_{A1})}{g_{m_{M7}} \cdot R_{\text{out}}}
@@ -228,7 +228,7 @@ Structurally, the gain-boosting amplifier is similar to the EA, but uses an NMOS
 
 #### Low-Pass Filter
 
-To further improve PSRR at high frequencies, a low-pass filter is added after the output voltage across \(R_7\).  
+To further improve PSRR at high frequencies, a low-pass filter is added after the output voltage across $R_7$.  
 The cutoff frequency is:
 
 $$
@@ -261,21 +261,21 @@ A dedicated start-up circuit forces the BGR into the active region at power-up a
 
 At initial power-up:
 
-- Node OUTEA (drain of M8) ≈ \(V_{DD}\)  
+- Node OUTEA (drain of M8) ≈ $V_{DD}$  
 - Node PREVBGR (gate of M7) ≈ 0 V → M7 is off  
-- No current flows through \(R_{21}\), so gate of M6 is at \(V_{DD}\) and M6 conducts strongly, discharging OUTEA
+- No current flows through $R_{21}$, so gate of M6 is at $V_{DD}$ and M6 conducts strongly, discharging OUTEA
 
-As \(V_{\text{BGR}}\) increases, M7 turns on, gate of M6 falls from \(V_{DD}\), and M6 current approaches zero.  
-\(R_{21}\) is chosen large to limit unnecessary current during normal operation.
+As $V_{\text{BGR}}$ increases, M7 turns on, gate of M6 falls from $V_{DD}$, and M6 current approaches zero.  
+$R_{21}$ is chosen large to limit unnecessary current during normal operation.
 
 ![VBGR vs VDD](figure/VBGR_VDD.png)  
-*Figure: \(V_{\text{BGR}}\) – \(V_{DD}\) Graph*
+*Figure: $V_{\text{BGR}}$ – $V_{DD}$ Graph*
 
 ![VBGR Transient](figure/VBGR_TRANS.png)  
 *Figure: Transient Simulation at Power-Up*
 
-The PMOS current mirror in the BGR uses two-finger devices with \(W/L = 500 \, \text{nm} / 20 \, \mu\text{m}\) to improve matching and PSRR.  
-PMOS device \(M_{13}\) supplies the bias current for the LDO error amplifier.
+The PMOS current mirror in the BGR uses two-finger devices with $W/L = 500 \, \text{nm} / 20 \, \mu\text{m}$ to improve matching and PSRR.  
+PMOS device $M_{13}$ supplies the bias current for the LDO error amplifier.
 
 ![Current mirror of BGR circuit](figure/CS_BGR.png)  
 *Figure: Current Mirror of BGR Circuit*
@@ -323,13 +323,13 @@ $$
 
 ### Curvature Compensation
 
-To generate \(\Delta V_{BE}\), BJTs are sized with different emitter areas.  
+To generate $\Delta V_{BE}$, BJTs are sized with different emitter areas.  
 In this design:
 
 - Left BJT multiplier: 1  
 - Right BJT multiplier: 8  
 
-This also simplifies layout into a uniform \(9 \times 9\) array.
+This also simplifies layout into a uniform $9 \times 9$ array.
 
 To reduce higher-order temperature effects, a curvature compensation network is used.  
 From the topology:
@@ -392,13 +392,13 @@ The LDO circuit consists of two primary blocks:
 
 For a **PMOS-based LDO**:
 
-- Pole \(P_1\) at the gate of the pass device:
+- Pole $P_1$ at the gate of the pass device:
 
   $$
   f_{P1} = -\frac{1}{2\pi R_{\text{OTA}} C_{\text{gate}}}
   $$
 
-- Pole \(P_2\) at the output:
+- Pole $P_2$ at the output:
 
   $$
   f_{P2} = -\frac{1}{2\pi R_L C_L} = -\frac{I_{\text{load}}}{2\pi V_{\text{out}} C_L}
@@ -406,19 +406,19 @@ For a **PMOS-based LDO**:
 
 For an **NMOS-based LDO**:
 
-- Pole \(P_1\) (EA output):
+- Pole $P_1$ (EA output):
 
   $$
   f_{P1} = -\frac{1}{2\pi R_{\text{OTA}} C_{\text{gate}}}
   $$
 
-- Pole \(P_2\) at regulator output:
+- Pole $P_2$ at regulator output:
 
   $$
   f_{P2} = -\frac{g_{m,\text{NMOS}}}{2\pi C_L} = -\frac{\sqrt{2 \beta I_{\text{load}}}}{2\pi C_L}
   $$
 
-Because NMOS devices have larger \(\beta\), the NMOS-based \(P_2\) is at a much higher frequency, especially in capacitor-less designs (small \(C_L\)), allowing \(P_1\) to be the dominant pole.
+Because NMOS devices have larger $\beta$, the NMOS-based $P_2$ is at a much higher frequency, especially in capacitor-less designs (small $C_L$), allowing $P_1$ to be the dominant pole.
 
 ![NMOS vs PMOS pass device drive capability](figure/CPNP.png)  
 *Figure: Comparison of Load Drive Capability of (a) NMOS and (b) PMOS Pass Devices*
@@ -436,9 +436,9 @@ PMOS has lower dropout voltage, so it is selected in this work.
 
 | Parameter          | NMOS          | NPN            | PNP            | PMOS           | Darlington        |
 |--------------------|---------------|----------------|----------------|----------------|-------------------|
-| \(I_{0\text{-max}}\) | Medium        | High           | High           | Medium         | High              |
-| \(I_{\text{static}}\)| Low           | Medium         | Medium         | Low            | Medium            |
-| \(V_{\text{drop-out}}\) | \(V_{\text{sat}} + V_{\text{gs}}\) | \(V_{\text{sat}} + V_{\text{be}}\) | \(V_{\text{ec-sat}}\) | \(V_{\text{sd-sat}}\) | \(V_{\text{sat}} + 2V_{\text{be}}\) |
+| $I_{0\text{-max}}$ | Medium        | High           | High           | Medium         | High              |
+| $I_{\text{static}}$| Low           | Medium         | Medium         | Low            | Medium            |
+| $V_{\text{drop-out}}$ | $V_{\text{sat}} + V_{\text{gs}}$ | $V_{\text{sat}} + V_{\text{be}}$ | $V_{\text{ec-sat}}$ | $V_{\text{sd-sat}}$ | $V_{\text{sat}} + 2V_{\text{be}}$ |
 | Speed              | Medium        | Fast           | Slow           | Medium         | Fast              |
 
 ![LDO schematic](figure/LDO_SCHE.png)  
@@ -480,7 +480,7 @@ To enhance phase margin, **Miller compensation** is used:
 ![Loop Gain of LDO](figure/LDO_LOOP_GAIN.png)  
 ![Phase of LDO](figure/LDO_PHASE.png)  
 
-The LDO is stable when the phase margin satisfies \( \text{PM} > 45^\circ \), as confirmed by loop-gain and phase simulations.
+The LDO is stable when the phase margin satisfies $ \text{PM} > 45^\circ $, as confirmed by loop-gain and phase simulations.
 
 ![PSRR of LDO](figure/LDO_PSRR.png)  
 
@@ -538,7 +538,7 @@ to enhance applicability in integrated-circuit design.
 The LDO has been investigated, designed, and successfully simulated.  
 Results show that:
 
-- Output voltages meet targets from \(-40^\circ\text{C}\) to \(70^\circ\text{C}\)  
+- Output voltages meet targets from $-40^\circ\text{C}$ to $70^\circ\text{C}$  
 - Operation is robust across TT, FF, SS, SF, and FS process corners  
 
 A summary table of key performance metrics highlights that the proposed design is competitive relative to prior work and provides a strong foundation for further CMOS LDO implementations.
